@@ -1,7 +1,6 @@
-# Weir
+# Rexuxion
 
-_An exciting and dramatically simplified approach to building modern web-based
-applications._
+_A simplified approach to building web apps._
 
 
 ## Frameworks
@@ -11,7 +10,7 @@ are also planned.
 
 ## Install
 
-Don't install this yet, it's not ready.
+Don't install this yet, it's not ready. **Currently working to remove gun.js from dependencies**.
 
 
 ## Status
