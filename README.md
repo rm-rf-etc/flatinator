@@ -1,4 +1,4 @@
-# Rexuxion
+# Reduxion
 
 _A simplified approach to building web apps._
 
