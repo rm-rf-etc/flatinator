@@ -12,7 +12,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rm-rf-etc/weir"
+    "url": "https://github.com/rm-rf-etc/redux-simplified"
   },
   "dependencies": {
     "lodash.isboolean": "^3.0.3",

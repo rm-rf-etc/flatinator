@@ -1,4 +1,3 @@
-# Weir Framework
+# Redux-Simplified
 
-An exciting and dramatically simplified approach to building modern
-web-based applications.
+A simplified variation of the redux architecture.

@@ -1,19 +1,19 @@
-Arguments: 
+Arguments:
   /Users/rob/.nvm/versions/node/v11.11.0/bin/node /Users/rob/.yarn/bin/yarn.js lint
 
-PATH: 
+PATH:
   /Users/rob/.pyenv/shims:/Users/rob/bin:/usr/local/opt/openssl/bin:/Users/rob/.yarn/bin:/Users/rob/.config/yarn/global/node_modules/.bin:/Users/rob/.cargo/bin:/Users/rob/.yarn/bin:/Users/rob/.nvm/versions/node/v11.11.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/TeX/texbin:/Users/rob/.rvm/bin
 
-Yarn version: 
+Yarn version:
   1.17.3
 
-Node version: 
+Node version:
   11.11.0
 
-Platform: 
+Platform:
   darwin x64
 
-Trace: 
+Trace:
   SyntaxError: /Users/rob/projects/weir/packages/structures-dimensional/package.json: Unexpected token } in JSON at position 734
       at JSON.parse (<anonymous>)
       at /Users/rob/.yarn/lib/cli.js:1625:59
@@ -21,7 +21,7 @@ Trace:
       at step (/Users/rob/.yarn/lib/cli.js:304:30)
       at /Users/rob/.yarn/lib/cli.js:315:13
 
-npm manifest: 
+npm manifest:
   {
     "name": "weir.structures-dimensional",
     "version": "0.0.1-alpha.0",
@@ -43,7 +43,7 @@ npm manifest:
     },
     "repository": {
       "type": "git",
-      "url": "https://github.com/rm-rf-etc/weir"
+      "url": "https://github.com/rm-rf-etc/redux-simplified"
     },
     "devDependencies": {
       "babel-eslint": "^10.0.3",
@@ -53,8 +53,8 @@ npm manifest:
     },
   }
 
-yarn manifest: 
+yarn manifest:
   No manifest
 
-Lockfile: 
+Lockfile:
   No lockfile

@@ -1,4 +1,4 @@
-# Reduxion
+# Redux-Simplified
 
 _A simplified approach to building web apps._
 
