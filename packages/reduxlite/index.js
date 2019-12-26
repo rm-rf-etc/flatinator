@@ -3,12 +3,8 @@ import { getStore } from "./store";
 /* eslint-env browser */
 /* eslint-disable no-underscore-dangle */
 
-export default ({
-	dbName = "@pp",
-	devmode = false,
-	devtools = null,
-}) => {
-	const store = getStore({
+export default (initialState = {}, { dbName = "@pp", devmode = false, devtools = null } = {}) => {
+	const store = getStore(initialState, {
 		dbName,
 		devmode,
 		devtools: devtools === true && window.__REDUX_DEVTOOLS_EXTENSION__

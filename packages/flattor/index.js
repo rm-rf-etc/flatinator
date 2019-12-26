@@ -23,7 +23,7 @@ export const getPath = (src, curPath, nextProp) => {
 
 export const branchExpand = (path, leaf) => (
     path.replace(/^\[/, "").split(/[.[]/).reverse().reduce((merged, key) => {
-        if (key.slice(-1) === "]") {
+        if (/^\d+\]/.test(key)) {
             const branch = [];
             const idx = parseInt(key.slice(0, -1), 10);
             branch[idx] = merged;
