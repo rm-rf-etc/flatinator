@@ -8962,6 +8962,26 @@ webpack@^4.39.3:
     watchpack "^1.6.0"
     webpack-sources "^1.4.1"
 
+weir.util@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/weir.util/-/weir.util-0.0.5.tgz#127ed06b2caa252042f0706014627b5cb7c25ee5"
+  integrity sha512-6QkS8jpwi5wOCnx/UBeozQEopoXSU+4YwDTMAaiNqsIRRIalf8mV5pwa6NhV3he3twEoU4dsu5OulBx4Mv2ueg==
+  dependencies:
+    lodash.isboolean "^3.0.3"
+    lodash.ismap "^4.4.2"
+    lodash.isnumber "^3.0.3"
+    lodash.isplainobject "^4.0.6"
+    lodash.isset "^4.4.2"
+    lodash.isstring "^4.0.1"
+    lodash.isweakmap "^4.4.1"
+    lodash.isweakset "^4.3.0"
+    lodash.keys "^4.2.0"
+    lodash.merge "^4.6.2"
+    lodash.omit "^4.5.0"
+    lodash.reduce "^4.6.0"
+    lodash.topairs "^4.3.0"
+    lodash.topath "^4.5.2"
+
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/whatwg-encoding/-/whatwg-encoding-1.0.5.tgz#5abacf777c32166a51d085d6b4f3e7d27113ddb0"

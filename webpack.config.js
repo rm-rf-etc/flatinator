@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'main.js',
-    library: 'weir',
+    library: 'reduxlite',
     path: path.resolve(__dirname, 'dist'),
     globalObject: "this",
     libraryTarget: 'umd'

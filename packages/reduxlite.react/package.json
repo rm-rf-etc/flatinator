@@ -1,0 +1,23 @@
+{
+  "name": "reduxlite.react",
+  "version": "0.0.5",
+  "description": "",
+  "main": "index.js",
+  "workspaces": true,
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rob Christian <rm.rf.etc@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.merge": "^4.6.2",
+    "lodash.zipobjectdeep": "^4.4.2",
+    "react": "^16.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rm-rf-etc/reduxlite"
+  }
+}

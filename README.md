@@ -1,11 +1,10 @@
-# Redux-Simplified
+# ReduxLite
 
 _A simplified approach to building web apps._
 
 
 ## Frameworks
-* Weir currently has bindings (via hooks API) for React. Bindings for Vue and Angular
-are also planned.
+* ReduxLite provides a hook for React. Bindings for Vue and Angular are also planned.
 
 
 ## Install

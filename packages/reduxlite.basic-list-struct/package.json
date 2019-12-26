@@ -1,0 +1,26 @@
+{
+    "name": "reduxlite.basic-list-struct",
+    "version": "0.0.5",
+    "description": "",
+    "main": "index.js",
+    "workspaces": true,
+    "scripts": {
+        "lint": "eslint .",
+        "test": "jest"
+    },
+    "keywords": [],
+    "author": "Rob Christian <rm.rf.etc@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "lodash.keys": "^4.2.0",
+        "lodash.merge": "^4.6.2",
+        "lodash.reduce": "^4.6.0",
+        "lodash.topath": "^4.5.2",
+        "lodash.values": "^4.3.0",
+        "weir.util": "^0.0.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rm-rf-etc/reduxlite"
+    }
+}
