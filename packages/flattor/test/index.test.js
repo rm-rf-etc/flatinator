@@ -4,7 +4,10 @@ import {
 	nestExpand,
 	getPath,
 	branchExpand,
+	segmentsFromPath,
 } from "../index";
+
+const repeats = 100000;
 
 /* eslint-disable quote-props */
 describe("getPath", () => {
@@ -166,6 +169,16 @@ describe("nestExpand", () => {
 		const initial = {
 			"[0][0][0][0][0]": Infinity,
 			"[0][0][0][0][1]": NaN,
+			"[1]": 1,
+			"[2]": 2,
+			"[3]": 3,
+			"[4]": 4,
+			"[5]": 5,
+			"[6]": 6,
+			"[7]": 7,
+			"[8]": 8,
+			"[9]": 9,
+			"[10]": 10,
 		};
 		const expected = [
 			[
@@ -177,7 +190,7 @@ describe("nestExpand", () => {
 						],
 					],
 				],
-			],
+			], 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
 		];
 		expect(nestExpand(initial)).toEqual(expected);
 	});
@@ -199,4 +212,39 @@ describe("nestExpand", () => {
 		expect(nestExpand(initial)).toEqual(expected);
 	});
 });
-/* eslint-enable */
+describe("Measure execution time", () => {
+	const testData = {
+		"a.b.c": 1,
+		"a.b.d": 1,
+		"a.b.e[0]": 1,
+		"a.b.e[1]": 1,
+	};
+
+	[branchExpand].forEach((fn) => {
+		it(`Run ${fn.name} ${(repeats).toLocaleString()} times.`, () => {
+			for (let i = 0; i < repeats; i++) {
+				fn("a.b[1].d[0]", 1);
+			}
+		});
+	});
+
+	[nestExpand].forEach((fn) => {
+		it(`Run ${fn.name} ${(repeats).toLocaleString()} times.`, () => {
+			for (let i = 0; i < repeats; i++) {
+				fn(testData);
+			}
+		});
+	});
+});
+describe.skip("Measure execution time", () => {
+	it("segmentsFromPath", () => {
+		for (let i = 0; i < repeats; i++) {
+			segmentsFromPath("a[0][0].b");
+		}
+	});
+	it("regex replace, split, reverse", () => {
+		for (let i = 0; i < repeats; i++) {
+			"a[0][0].b".replace(/^\[/, "").split(/[.[]/).reverse();
+		}
+	});
+});

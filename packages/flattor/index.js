@@ -21,17 +21,71 @@ export const getPath = (src, curPath, nextProp) => {
     return pathNow;
 };
 
-export const branchExpand = (path, leaf) => (
-    path.replace(/^\[/, "").split(/[.[]/).reverse().reduce((merged, key) => {
-        if (/^\d+\]/.test(key)) {
-            const branch = [];
-            const idx = parseInt(key.slice(0, -1), 10);
-            branch[idx] = merged;
-            return branch;
+export const segmentsFromPath = (path) => {
+    const segments = [''];
+    let l = 0;
+    for(let r = 0; r < path.length; r++) {
+        if (path[r] === '[') {
+            l++;
+            segments[l] = '[';
         }
-        return { [key]: merged };
-    }, leaf)
-);
+        else if (path[r] !== '.') {
+            segments[l] += path[r];
+        } else {
+            l++;
+            segments[l] = '';
+        }
+    }
+    return segments;
+}
+
+export const branchExpand = (path, leaf) => {
+    const segments = [];
+    let isOb = true;
+    let thing = {};
+    let prop = '';
+    for(let r = 0; r < path.length; r++) {
+        switch(path[r]) {
+            case ']': {
+                segments[segments.length] = { thing, prop: isOb ? prop : +prop };
+                prop = '';
+                break;
+            }
+            case '.': {
+                if (isOb) {
+                    segments[segments.length] = { thing, prop };
+                } else {
+                    isOb = true;
+                }
+                thing = {};
+                prop = '';
+                break;
+            }
+            case '[': {
+                if (prop) {
+                    segments[segments.length] = { thing, prop };
+                }
+                thing = [];
+                isOb = false;
+                prop = '';
+                break;
+            }
+            default: prop += path[r];
+        }
+    }
+    if (isOb) {
+        segments[segments.length] = { thing, prop: isOb ? prop : +prop };
+    }
+
+    let branch;
+    let last = leaf;
+    for (let i = segments.length - 1; i > -1; i--) {
+        branch = segments[i].thing;
+        branch[segments[i].prop] = last;
+        last = branch;
+    }
+    return last;
+};
 
 export const nestFlatten = (src, curPath) => {
     const result = {};
@@ -49,10 +103,22 @@ export const nestFlatten = (src, curPath) => {
 };
 
 export const nestExpand = (src) => {
-    const result = keys(src)[0][0] === "[" ? [] : {};
+    let result = [];
+    const branches = [];
 
-    entries(src).forEach(([key, val]) => {
-        merge(result, branchExpand(key, val));
+    keys(src).forEach((key) => {
+        if (key[0] !== '[') {
+            result = {};
+        }
+        branches[branches.length] = branchExpand(key, src[key]);
     });
+    branches.forEach((branch) => merge(result, branch));
+
     return result;
+};
+
+export const arrayPartial = (pos, thing) => {
+    const arr = [];
+    arr[pos] = thing;
+    return arr;
 };
