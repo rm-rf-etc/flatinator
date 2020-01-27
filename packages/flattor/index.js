@@ -2,7 +2,6 @@ import isPlainObject from "lodash.isplainobject";
 import isBoolean from "lodash.isboolean";
 import isString from "lodash.isstring";
 import isNumber from "lodash.isnumber";
-import entries from "lodash.topairs";
 import merge from "lodash.merge";
 import keys from "lodash.keys";
 
